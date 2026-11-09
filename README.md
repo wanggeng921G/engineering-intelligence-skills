@@ -32,6 +32,8 @@ $skills | ForEach-Object {
 
 For OpenCode, set `$target` to `Join-Path $HOME '.config\opencode\skills'` and rerun. Restart the target agent, ask it to load `ei-orchestrator`, and run one case from `tests/scenarios.md`. The command copies files; it does not by itself verify discovery in the external agent. Installation is not performed by this package.
 
+To make the orchestrator the default for **new sessions** on another machine, add this instruction to Codex's `~/.codex/AGENTS.md` and OpenCode's `~/.config/opencode/AGENTS.md`: “After the first user message, load `ei-orchestrator` before the first substantive answer; use it to route engineering tasks to only the relevant skills.” The installed skills remain available without this instruction, but are then selected by the agent as needed.
+
 ## Validate and use
 
 Run `python tests/validate_package.py`. This checks structure and references; use the behavioral cases in `tests/scenarios.md` to assess agent behavior. Invoke `ei-orchestrator` for cross-domain work or a domain skill directly for a narrow task. The router loads only relevant skills. Templates are optional output formats, not required boilerplate.
