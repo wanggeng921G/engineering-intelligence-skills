@@ -14,6 +14,11 @@ Copy **all** `skills/ei-*` directories, including their contents, into one agent
 Clone this repository, open a PowerShell terminal in its root, then install for Codex user scope:
 
 ```powershell
+git clone https://github.com/wanggeng921G/engineering-intelligence-skills.git
+Set-Location engineering-intelligence-skills
+```
+
+```powershell
 $source = Join-Path (Get-Location) 'skills'
 $target = Join-Path $HOME '.agents\skills'
 New-Item -ItemType Directory -Force $target | Out-Null
